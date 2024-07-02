@@ -15,6 +15,7 @@ class AndroidFloatingTextFieldWidget extends StatelessWidget {
     this.obscureText = false,
     this.textCapitalization = TextCapitalization.none,
     this.textInputType = TextInputType.text,
+    this.textInputAction = TextInputAction.done,
 
     /// When we are using TextInputType as multiline that time must have to provide height to parent widget.
   });
@@ -28,6 +29,7 @@ class AndroidFloatingTextFieldWidget extends StatelessWidget {
   final Color? textFieldColor;
   final TextInputType? textInputType;
   final TextCapitalization? textCapitalization;
+  final TextInputAction? textInputAction;
 
   final Function onChange;
   final Function onSubmitted;
@@ -45,9 +47,10 @@ class AndroidFloatingTextFieldWidget extends StatelessWidget {
             obscureText: obscureText,
             textCapitalization: textCapitalization ?? TextCapitalization.none,
             keyboardType: textInputType,
-            maxLines: null,
+            maxLines: textInputType == TextInputType.multiline ? null : 1,
             expands: textInputType == TextInputType.multiline,
             textAlignVertical: TextAlignVertical.top,
+            textInputAction: textInputAction ?? TextInputAction.done,
             cursorColor: showError
                 ? Theme.of(context).colorScheme.error
                 : textFieldColor ?? Theme.of(context).colorScheme.secondary,
