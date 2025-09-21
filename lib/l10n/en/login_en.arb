@@ -1,0 +1,18 @@
+{
+    "loginTitle": "Login2",
+    "@loginTitle": {
+        "description": "The title of the login screen"
+    },
+    "emailLabel": "Email",
+    "@emailLabel": {
+        "description": "The label for the email input field"
+    },
+    "passwordLabel": "Password",
+    "@passwordLabel": {
+        "description": "The label for the password input field"
+    },
+    "loginButton": "Login",
+    "@loginButton": {
+        "description": "The label for the login button"
+    }
+}
